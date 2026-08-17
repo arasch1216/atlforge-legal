@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentation — Ticket Quality Auditor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="brand">Ticket Quality Auditor</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="docs.html">Documentation</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <h1>Documentation</h1>
+    <p><strong>Version:</strong> 2.0.0 (Forge / Marketplace)</p>
+
+    <h2>What it does</h2>
+    <p>
+      Ticket Quality Auditor scores Jira issues for completeness, clarity,
+      testability, and actionable requirements. It surfaces findings and
+      recommendations in an Issue Panel and can optionally suggest improved
+      ticket text for you to review before applying.
+    </p>
+
+    <h2>Install</h2>
+    <ol>
+      <li>Install from Atlassian Marketplace (Jira Cloud).</li>
+      <li>Grant requested permissions (<code>read:jira-work</code>, <code>write:jira-work</code>, <code>storage:app</code>).</li>
+      <li>Open <strong>Admin</strong> to confirm project / issue-type filters (defaults work immediately).</li>
+      <li>Open any issue → Ticket Quality panel → <strong>Analyze Ticket</strong>.</li>
+    </ol>
+
+    <h2>Issue Panel</h2>
+    <ul>
+      <li><strong>Analyze / Re-analyze</strong> — run rules + optional Forge LLMs analysis</li>
+      <li><strong>Improve Ticket</strong> — generate a proposed rewrite; apply only after explicit confirmation</li>
+      <li>Scores are 0–100 with quality levels (Excellent / Good / Needs Improvement / Poor)</li>
+    </ul>
+
+    <h2>Admin configuration</h2>
+    <ul>
+      <li>Enable/disable product, AI, and Improve Ticket</li>
+      <li>Automation on create/update + minimum interval</li>
+      <li>Project and issue-type filters</li>
+      <li>Scoring model version and thresholds</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><code>read:jira-work</code> — read issue fields for analysis</li>
+      <li><code>write:jira-work</code> — apply confirmed Improve Ticket updates; optional comments</li>
+      <li><code>storage:app</code> — store config and analysis results in Forge storage</li>
+    </ul>
+
+    <h2>Privacy &amp; AI</h2>
+    <p>
+      Analysis results are stored in Forge app storage. When AI is enabled,
+      selected ticket text is processed by Atlassian-hosted Forge LLMs
+      (no third-party AI egress). See the
+      <a href="privacy.html">Privacy Policy</a>.
+    </p>
+
+    <h2>Support</h2>
+    <p>
+      <a href="support.html">Support page</a> ·
+      <a href="mailto:adhayes1321@gmail.com">adhayes1321@gmail.com</a>
+    </p>
+  </main>
+  <footer class="site-footer wrap">
+    <p>AD Sycronicity · Ticket Quality Auditor v2.0.0</p>
+  </footer>
+</body>
+</html>
