@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Policy — Jira Ticket Quality Auditor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="brand">Jira Ticket Quality Auditor</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
+        <a href="security.html">Security</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="disclaimer">
+      <strong>Draft for Marketplace distribution.</strong> This describes the security
+      posture of the App as implemented on Atlassian Forge. It is not a certification
+      or compliance attestation.
+    </p>
+
+    <h1>Security Policy</h1>
+    <p><strong>Last updated:</strong> 17 August 2026</p>
+    <p>
+      This Security Policy describes how <strong>AD Sycronicity</strong> (“we”, “us”)
+      secures the Atlassian Forge app <strong>Jira Ticket Quality Auditor</strong>
+      (the “App”).
+    </p>
+
+    <h2>1. Platform</h2>
+    <p>
+      The App runs entirely on <strong>Atlassian Forge</strong>. Core product logic,
+      storage, and optional AI inference use Atlassian-hosted services (Forge functions,
+      Forge app storage / KVS, and Forge LLMs). The App is designed for
+      <strong>Runs on Atlassian</strong> eligibility: no third-party AI egress and no
+      Remotes/Connect backends for core functionality.
+    </p>
+
+    <h2>2. Authentication and authorization</h2>
+    <ul>
+      <li>Access is granted through the customer’s Atlassian Cloud install of the App</li>
+      <li>API calls use Forge’s installation identity (<code>asApp</code>)</li>
+      <li>Configuration is managed from the App’s admin UI by authorized Jira users</li>
+      <li>Customers are never asked for Atlassian Personal Access Tokens, passwords, or shared API secrets for App use</li>
+    </ul>
+
+    <h2>3. Permissions (scopes)</h2>
+    <p>The App requests least-privilege scopes:</p>
+    <ul>
+      <li><code>read:jira-work</code> — read issue content and receive issue events</li>
+      <li><code>write:jira-work</code> — apply confirmed ticket improvements and optional comments</li>
+      <li><code>storage:app</code> — persist configuration and analysis results</li>
+    </ul>
+
+    <h2>4. Data handling</h2>
+    <ul>
+      <li>Issue-derived analysis and configuration are stored in Forge app storage (installation-scoped)</li>
+      <li>When AI is enabled, selected ticket text is processed by Atlassian-hosted Forge LLMs</li>
+      <li>When AI is disabled, analysis is deterministic (rules/scoring only)</li>
+      <li>No separate customer database is operated outside Atlassian for core App state</li>
+    </ul>
+
+    <h2>5. Logging</h2>
+    <p>
+      The App emits structured operational logs (for example: product id, execution id,
+      issue key, score, duration). Sensitive fields such as tokens and secrets are
+      redacted. Logs remain within Atlassian Forge logging. We do not share logs that
+      include End-User Data with third-party entities.
+    </p>
+
+    <h2>6. Network egress</h2>
+    <p>
+      The App does not define customer-managed egress for core functionality and does not
+      expose remote REST APIs for third-party tool integration. There is no third-party
+      AI provider egress.
+    </p>
+
+    <h2>7. Vulnerability reporting</h2>
+    <p>
+      Report suspected security issues to
+      <a href="mailto:adhayes1321@gmail.com">adhayes1321@gmail.com</a>.
+      Please include enough detail to reproduce the issue and avoid sending production
+      secrets in clear text when possible.
+    </p>
+
+    <h2>8. Related documents</h2>
+    <ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="docs.html">Documentation</a></li>
+    </ul>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© AD Sycronicity — Jira Ticket Quality Auditor</p>
+    </div>
+  </footer>
+</body>
+</html>
