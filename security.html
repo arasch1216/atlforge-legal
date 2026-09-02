@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Security Policy — Jira Ticket Quality Auditor</title>
+  <title>Security Policy — Ticket Quality Auditor</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <p class="brand">Jira Ticket Quality Auditor</p>
+      <p class="brand">Ticket Quality Auditor</p>
       <nav>
         <a href="index.html">Home</a>
+        <a href="docs.html">Documentation</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="support.html">Support</a>
@@ -27,10 +28,10 @@
     </p>
 
     <h1>Security Policy</h1>
-    <p><strong>Last updated:</strong> 17 August 2026</p>
+    <p><strong>Last updated:</strong> 2 September 2026</p>
     <p>
-      This Security Policy describes how <strong>AD Sycronicity</strong> (“we”, “us”)
-      secures the Atlassian Forge app <strong>Jira Ticket Quality Auditor</strong>
+      This Security Policy describes how <strong>AD Lab Development</strong> (“we”, “us”)
+      secures the Atlassian Forge app <strong>Ticket Quality Auditor</strong>
       (the “App”).
     </p>
 
@@ -47,7 +48,8 @@
     <ul>
       <li>Access is granted through the customer’s Atlassian Cloud install of the App</li>
       <li>API calls use Forge’s installation identity (<code>asApp</code>)</li>
-      <li>Configuration is managed from the App’s admin UI by authorized Jira users</li>
+      <li>User-initiated actions call the Forge Authorize API before <code>asApp()</code> Jira access</li>
+      <li>Configuration is managed from the App’s admin UI by Jira administrators</li>
       <li>Customers are never asked for Atlassian Personal Access Tokens, passwords, or shared API secrets for App use</li>
     </ul>
 
@@ -85,7 +87,7 @@
     <h2>7. Vulnerability reporting</h2>
     <p>
       Report suspected security issues to
-      <a href="mailto:adhayes1321@gmail.com">adhayes1321@gmail.com</a>.
+      <a href="mailto:security@adlabdevelopment.com">security@adlabdevelopment.com</a>.
       Please include enough detail to reproduce the issue and avoid sending production
       secrets in clear text when possible.
     </p>
@@ -99,7 +101,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>© AD Sycronicity — Jira Ticket Quality Auditor</p>
+      <p>© AD Lab Development — Ticket Quality Auditor</p>
     </div>
   </footer>
 </body>
