@@ -1,28 +1,45 @@
-# GitHub Pages legal/support site
+# Legal & support site source
 
-Static site for Marketplace / Forge distribution URLs.
+Published at **https://adlabdevelopment.com/** (AD Lab Development).
+
+Canonical vendor values: `../vendor.json`
 
 ## Pages
 
-| Page | File | Use in Atlassian forms |
-|------|------|------------------------|
-| Privacy Policy | `privacy.html` | Privacy policy URL |
-| Terms of Service | `terms.html` | Terms of service URL |
-| Support | `support.html` | Support URL / contact page |
-| Home | `index.html` | Optional landing |
+| Page | File | Marketplace field |
+|------|------|-------------------|
+| Home | `index.html` | Vendor / partner website |
+| Documentation | `docs.html` | Documentation URL |
+| Privacy | `privacy.html` | Privacy / data security |
+| Terms | `terms.html` | Additional terms (Bonterms is primary EULA) |
+| Support | `support.html` | Support page |
+| Security | `security.html` | Security policy |
 
-Support email used in pages: `adhayes1321@gmail.com`
+**Support:** `support@adlabdevelopment.com`  
+**Security:** `security@adlabdevelopment.com`
 
-## Publish (separate public repo recommended)
+## Deploy
 
-```bash
-# from marketplace/site after gh auth login
-gh repo create atlforge-legal --public --source=. --remote=origin --push
-gh api -X PUT "repos/<YOUR_GITHUB_USER>/atlforge-legal/pages" -f build_type=legacy -f source[branch]=main -f source[path]=/
+Sync these files to the host serving `adlabdevelopment.com`, or push to the repo
+connected to that site’s deploy pipeline.
+
+```powershell
+# Verify all pages return direct 200
+$urls = @(
+  'https://adlabdevelopment.com/',
+  'https://adlabdevelopment.com/docs.html',
+  'https://adlabdevelopment.com/privacy.html',
+  'https://adlabdevelopment.com/terms.html',
+  'https://adlabdevelopment.com/support.html',
+  'https://adlabdevelopment.com/security.html'
+)
+foreach ($u in $urls) {
+  try {
+    $r = Invoke-WebRequest $u -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 20
+    "DIRECT $($r.StatusCode) $u"
+  } catch {
+    $c = if ($_.Exception.Response) { [int]$_.Exception.Response.StatusCode } else { 'ERR' }
+    "NOT-DIRECT $c $u"
+  }
+}
 ```
-
-Expected URLs (after Pages is active):
-
-- `https://<YOUR_GITHUB_USER>.github.io/atlforge-legal/privacy.html`
-- `https://<YOUR_GITHUB_USER>.github.io/atlforge-legal/terms.html`
-- `https://<YOUR_GITHUB_USER>.github.io/atlforge-legal/support.html`
