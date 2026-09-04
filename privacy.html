@@ -3,30 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy policy for Ticket Quality Auditor by AD Lab Development." />
   <title>Privacy Policy — Ticket Quality Auditor</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <p class="brand">Ticket Quality Auditor</p>
+    <div class="wrap-wide inner">
+      <a class="logo" href="index.html">
+        <strong>AD Lab Development</strong>
+        <span>Ticket Quality Auditor</span>
+      </a>
       <nav>
         <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+        <a href="docs.html">Documentation</a>
         <a href="support.html">Support</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="terms.html">Terms</a>
         <a href="security.html">Security</a>
       </nav>
     </div>
   </header>
-  <main class="wrap">
-    <p class="disclaimer">
-      <strong>Draft for Marketplace distribution.</strong> This is not a legal compliance
-      attestation. Owner/legal review is recommended before treating this as a final policy.
-    </p>
-
+  <main class="wrap prose">
     <h1>Privacy Policy</h1>
-    <p><strong>Last updated:</strong> 17 August 2026</p>
+    <p class="meta"><strong>Last updated:</strong> 4 September 2026</p>
     <p>
       This Privacy Policy describes how <strong>AD Lab Development</strong> (“we”, “us”)
       handles information in connection with the Atlassian Forge app
@@ -35,14 +36,14 @@
 
     <h2>1. Who this applies to</h2>
     <p>
-      This policy applies to organizations that install the App on Atlassian Cloud
-      (Jira) and to users of those installations.
+      This policy applies to organizations that install the App on Atlassian Cloud (Jira)
+      and to users of those installations.
     </p>
 
     <h2>2. Data we access</h2>
     <p>Through Atlassian Forge APIs, the App may access:</p>
     <ul>
-      <li>Jira issue fields used for quality analysis (for example: summary, description, issue type, priority, labels, components, linked issues, project, and timestamps)</li>
+      <li>Jira issue fields used for quality analysis (summary, description, issue type, priority, labels, components, linked issues, project, timestamps)</li>
       <li>App configuration set by administrators</li>
       <li>Derived analysis results (scores, findings, recommendations)</li>
     </ul>
@@ -59,8 +60,7 @@
     <p>
       When AI features are enabled, selected ticket text may be processed by
       <strong>Atlassian-hosted Forge LLMs</strong> to produce structured quality assessments
-      and optional rewrite suggestions. This processing is designed to remain within the
-      Atlassian trust boundary (Runs on Atlassian–oriented architecture).
+      and optional rewrite suggestions. This processing remains within the Atlassian trust boundary.
     </p>
     <p>
       When AI is disabled, analysis is deterministic (rules/scoring only) and no LLM calls are made.
@@ -69,47 +69,46 @@
     <h2>5. What we do not do</h2>
     <ul>
       <li>We do not sell customer Jira content</li>
-      <li>We do not use customer ticket content to train public third-party models outside the Forge LLM platform path described above</li>
-      <li>We do not require customers to send payment card details to us (Marketplace billing is handled by Atlassian when the App is paid)</li>
+      <li>We do not use customer ticket content to train public third-party models</li>
+      <li>We do not collect payment card details (Marketplace billing is handled by Atlassian when the App is paid)</li>
     </ul>
 
     <h2>6. Retention</h2>
     <p>
       Stored analysis is retained until overwritten by a newer analysis, invalidated by
-      configuration/product logic, or removed as part of app uninstall / Atlassian platform
-      retention behavior for Forge storage.
+      configuration logic, or removed as part of app uninstall / Atlassian platform retention.
     </p>
 
     <h2>7. Deletion / uninstall</h2>
     <p>
-      Uninstalling the App removes the App’s access to the site. Forge-hosted storage
-      retention and recovery follow Atlassian platform behavior. For deletion requests,
+      Uninstalling the App removes the App’s access to the site. For deletion requests,
       contact us using the email below.
     </p>
 
     <h2>8. Subprocessors / platform providers</h2>
     <p>
       The App runs on Atlassian Forge. AI features use Atlassian Forge LLMs.
-      Atlassian’s platform terms and privacy documentation also apply to underlying hosting.
+      Atlassian’s platform terms and privacy documentation also apply.
     </p>
 
     <h2>9. Customer responsibilities</h2>
     <ul>
       <li>Configure the App appropriately for your organization</li>
-      <li>Ensure your use of Jira content with the App complies with your internal policies and applicable law</li>
+      <li>Ensure your use of Jira content complies with your internal policies and applicable law</li>
       <li>Provide notices to your users as required for your jurisdiction</li>
     </ul>
 
     <h2>10. Contact</h2>
     <p>
-      Privacy / support contact:<br />
       <a href="mailto:support@adlabdevelopment.com">support@adlabdevelopment.com</a><br />
-      Vendor: AD Lab Development
+      AD Lab Development
     </p>
   </main>
-  <footer class="site-footer wrap">
-    <p><a href="index.html">Home</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a>
-        <a href="security.html">Security</a></p>
+  <footer class="site-footer">
+    <div class="wrap-wide footer-bottom" style="border-top:none;margin-top:0;padding-top:0;">
+      <span>© 2026 AD Lab Development</span>
+      <span><a href="terms.html">Terms</a> · <a href="security.html">Security</a></span>
+    </div>
   </footer>
 </body>
 </html>

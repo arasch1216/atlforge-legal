@@ -3,36 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Security policy for Ticket Quality Auditor by AD Lab Development." />
   <title>Security Policy — Ticket Quality Auditor</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <p class="brand">Ticket Quality Auditor</p>
+    <div class="wrap-wide inner">
+      <a class="logo" href="index.html">
+        <strong>AD Lab Development</strong>
+        <span>Ticket Quality Auditor</span>
+      </a>
       <nav>
         <a href="index.html">Home</a>
         <a href="docs.html">Documentation</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
         <a href="support.html">Support</a>
-        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="security.html" aria-current="page">Security</a>
       </nav>
     </div>
   </header>
-  <main class="wrap">
-    <p class="disclaimer">
-      <strong>Draft for Marketplace distribution.</strong> This describes the security
-      posture of the App as implemented on Atlassian Forge. It is not a certification
-      or compliance attestation.
-    </p>
-
+  <main class="wrap prose">
     <h1>Security Policy</h1>
-    <p><strong>Last updated:</strong> 2 September 2026</p>
+    <p class="meta"><strong>Last updated:</strong> 4 September 2026</p>
     <p>
-      This Security Policy describes how <strong>AD Lab Development</strong> (“we”, “us”)
-      secures the Atlassian Forge app <strong>Ticket Quality Auditor</strong>
-      (the “App”).
+      This Security Policy describes how <strong>AD Lab Development</strong> secures the
+      Atlassian Forge app <strong>Ticket Quality Auditor</strong> (the “App”).
     </p>
 
     <h2>1. Platform</h2>
@@ -50,46 +48,41 @@
       <li>API calls use Forge’s installation identity (<code>asApp</code>)</li>
       <li>User-initiated actions call the Forge Authorize API before <code>asApp()</code> Jira access</li>
       <li>Configuration is managed from the App’s admin UI by Jira administrators</li>
-      <li>Customers are never asked for Atlassian Personal Access Tokens, passwords, or shared API secrets for App use</li>
+      <li>Customers are never asked for Atlassian passwords or shared API secrets</li>
     </ul>
 
     <h2>3. Permissions (scopes)</h2>
-    <p>The App requests least-privilege scopes:</p>
     <ul>
       <li><code>read:jira-work</code> — read issue content and receive issue events</li>
-      <li><code>write:jira-work</code> — apply confirmed ticket improvements and optional comments</li>
+      <li><code>write:jira-work</code> — apply confirmed ticket improvements</li>
       <li><code>storage:app</code> — persist configuration and analysis results</li>
     </ul>
 
     <h2>4. Data handling</h2>
     <ul>
-      <li>Issue-derived analysis and configuration are stored in Forge app storage (installation-scoped)</li>
+      <li>Analysis and configuration are stored in Forge app storage (installation-scoped)</li>
       <li>When AI is enabled, selected ticket text is processed by Atlassian-hosted Forge LLMs</li>
-      <li>When AI is disabled, analysis is deterministic (rules/scoring only)</li>
-      <li>No separate customer database is operated outside Atlassian for core App state</li>
+      <li>When AI is disabled, analysis is deterministic only</li>
+      <li>No separate customer database outside Atlassian for core App state</li>
     </ul>
 
     <h2>5. Logging</h2>
     <p>
-      The App emits structured operational logs (for example: product id, execution id,
-      issue key, score, duration). Sensitive fields such as tokens and secrets are
-      redacted. Logs remain within Atlassian Forge logging. We do not share logs that
-      include End-User Data with third-party entities.
+      The App emits structured operational logs with secret redaction. Logs remain within
+      Atlassian Forge logging. We do not share logs containing End-User Data with third parties.
     </p>
 
     <h2>6. Network egress</h2>
     <p>
       The App does not define customer-managed egress for core functionality and does not
-      expose remote REST APIs for third-party tool integration. There is no third-party
-      AI provider egress.
+      expose remote REST APIs for third-party integration. There is no third-party AI egress.
     </p>
 
     <h2>7. Vulnerability reporting</h2>
     <p>
       Report suspected security issues to
       <a href="mailto:security@adlabdevelopment.com">security@adlabdevelopment.com</a>.
-      Please include enough detail to reproduce the issue and avoid sending production
-      secrets in clear text when possible.
+      Include enough detail to reproduce the issue. Avoid sending production secrets in clear text.
     </p>
 
     <h2>8. Related documents</h2>
@@ -100,8 +93,9 @@
     </ul>
   </main>
   <footer class="site-footer">
-    <div class="wrap">
-      <p>© AD Lab Development — Ticket Quality Auditor</p>
+    <div class="wrap-wide footer-bottom" style="border-top:none;margin-top:0;padding-top:0;">
+      <span>© 2026 AD Lab Development</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></span>
     </div>
   </footer>
 </body>

@@ -1,45 +1,22 @@
-# Legal & support site source
+# Legal & support site — GitHub Pages
 
-Published at **https://adlabdevelopment.com/** (AD Lab Development).
+**Live domain:** https://adlabdevelopment.com/  
+**Repo:** https://github.com/arasch1216/atlforge-legal  
+**Hosting:** GitHub Pages (free) · DNS on Squarespace (domain only, no Squarespace website)
 
-Canonical vendor values: `../vendor.json`
+## Deploy guide
+
+→ **[DEPLOY-GITHUB-PAGES.md](DEPLOY-GITHUB-PAGES.md)** — enable Pages + Squarespace DNS (browser only)
 
 ## Pages
 
-| Page | File | Marketplace field |
-|------|------|-------------------|
-| Home | `index.html` | Vendor / partner website |
-| Documentation | `docs.html` | Documentation URL |
-| Privacy | `privacy.html` | Privacy / data security |
-| Terms | `terms.html` | Additional terms (Bonterms is primary EULA) |
-| Support | `support.html` | Support page |
-| Security | `security.html` | Security policy |
+| URL | File |
+|-----|------|
+| https://adlabdevelopment.com/ | `index.html` |
+| https://adlabdevelopment.com/docs.html | `docs.html` |
+| https://adlabdevelopment.com/privacy.html | `privacy.html` |
+| https://adlabdevelopment.com/terms.html | `terms.html` |
+| https://adlabdevelopment.com/support.html | `support.html` |
+| https://adlabdevelopment.com/security.html | `security.html` |
 
-**Support:** `support@adlabdevelopment.com`  
-**Security:** `security@adlabdevelopment.com`
-
-## Deploy
-
-Sync these files to the host serving `adlabdevelopment.com`, or push to the repo
-connected to that site’s deploy pipeline.
-
-```powershell
-# Verify all pages return direct 200
-$urls = @(
-  'https://adlabdevelopment.com/',
-  'https://adlabdevelopment.com/docs.html',
-  'https://adlabdevelopment.com/privacy.html',
-  'https://adlabdevelopment.com/terms.html',
-  'https://adlabdevelopment.com/support.html',
-  'https://adlabdevelopment.com/security.html'
-)
-foreach ($u in $urls) {
-  try {
-    $r = Invoke-WebRequest $u -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 20
-    "DIRECT $($r.StatusCode) $u"
-  } catch {
-    $c = if ($_.Exception.Response) { [int]$_.Exception.Response.StatusCode } else { 'ERR' }
-    "NOT-DIRECT $c $u"
-  }
-}
-```
+Vendor config: `../vendor.json`
