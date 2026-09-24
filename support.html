@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Customer support for Ticket Quality Auditor by AD Lab Development." />
-  <title>Support — Ticket Quality Auditor</title>
+  <meta name="description" content="Customer support for AD Lab Development Atlassian Forge apps." />
+  <title>Support — AD Lab Development</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,7 +13,7 @@
     <div class="wrap-wide inner">
       <a class="logo" href="index.html">
         <strong>AD Lab Development</strong>
-        <span>Ticket Quality Auditor</span>
+        <span>Atlassian Forge apps</span>
       </a>
       <nav>
         <a href="index.html">Home</a>
@@ -27,14 +27,10 @@
   </header>
   <main class="wrap prose">
     <h1>Customer Support</h1>
-    <p class="meta">
-      Ticket Quality Auditor for Jira Cloud · Mon–Fri, US business hours
-    </p>
+    <p class="meta">AD Lab Development Forge apps for Jira Cloud · Mon–Fri, US business hours</p>
 
     <h2>Support portal</h2>
-    <p>
-      Open a request in our Jira Service Management customer portal:
-    </p>
+    <p>Open a request in our Jira Service Management customer portal (all Marketplace apps):</p>
     <p>
       <a href="https://adhayes.atlassian.net/servicedesk/customer/portal/1">
         adhayes.atlassian.net/servicedesk/customer/portal/1
@@ -45,26 +41,36 @@
     <h2>Email</h2>
     <p><a href="mailto:support@adlabdevelopment.com">support@adlabdevelopment.com</a></p>
     <p>
-      Include your Atlassian site URL, app version, issue key (if relevant), and steps to
-      reproduce. Do not send API tokens or passwords.
+      Include your Atlassian site URL, <strong>app name</strong>, app version, issue key (if
+      relevant), and steps to reproduce. Do not send API tokens or passwords.
     </p>
 
-    <h2>Getting started</h2>
+    <h2>Product documentation</h2>
+    <ul>
+      <li><a href="docs.html">Documentation hub</a></li>
+      <li><a href="riskpilot-docs.html">RiskPilot</a></li>
+      <li><a href="ticket-quality-docs.html">Ticket Quality Auditor</a></li>
+    </ul>
+
+    <h2 id="riskpilot">RiskPilot — getting started</h2>
     <ol>
       <li>Install from Atlassian Marketplace.</li>
-      <li>Grant the requested Jira permissions.</li>
-      <li>Open Admin to configure projects, automation, and AI.</li>
-      <li>Open a Jira issue → Ticket Quality panel → <strong>Analyze Ticket</strong>.</li>
+      <li>Open <strong>RiskPilot Admin</strong> to select monitored projects.</li>
+      <li>Add the dashboard gadget and run <strong>Refresh portfolio analysis</strong>.</li>
+      <li>Open an issue → RiskPilot panel → <strong>Analyze with RiskPilot</strong>.</li>
     </ol>
-    <p>Full guide: <a href="docs.html">Documentation</a></p>
+
+    <h2 id="ticket-quality">Ticket Quality Auditor — getting started</h2>
+    <ol>
+      <li>Install from Atlassian Marketplace.</li>
+      <li>Open Admin to configure projects and automation.</li>
+      <li>Open any issue → Ticket Quality panel → <strong>Analyze Ticket</strong>.</li>
+    </ol>
 
     <h2>Common issues</h2>
-    <ul>
-      <li><strong>AI unavailable:</strong> Deterministic analysis still works. Retry later or disable AI in Admin.</li>
-      <li><strong>Permission errors on Improve Ticket:</strong> User needs issue edit permission.</li>
-      <li><strong>Stale score:</strong> Click <strong>Re-analyze</strong> after major ticket edits.</li>
-      <li><strong>No automatic analysis:</strong> Check project/issue-type filters and automation in Admin.</li>
-    </ul>
+    <p><strong>All apps:</strong> Confirm you installed the correct Marketplace listing and that licensing is active for paid apps.</p>
+    <p><strong>RiskPilot:</strong> Refresh portfolio analysis after config changes; check project keys in Admin; Insights requires a saved portfolio snapshot.</p>
+    <p><strong>Ticket Quality:</strong> Re-analyze after major edits; Improve Ticket requires issue edit permission; disable AI in Admin if LLM is unavailable (deterministic mode still works).</p>
 
     <h2>Security issues</h2>
     <p>
@@ -79,5 +85,6 @@
       <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
     </div>
   </footer>
+  <script src="site.js"></script>
 </body>
 </html>

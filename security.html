@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Security policy for Ticket Quality Auditor by AD Lab Development." />
-  <title>Security Policy — Ticket Quality Auditor</title>
+  <meta name="description" content="Security policy for AD Lab Development Atlassian Forge Marketplace apps." />
+  <title>Security Policy — AD Lab Development</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,7 +13,7 @@
     <div class="wrap-wide inner">
       <a class="logo" href="index.html">
         <strong>AD Lab Development</strong>
-        <span>Ticket Quality Auditor</span>
+        <span>Atlassian Forge apps</span>
       </a>
       <nav>
         <a href="index.html">Home</a>
@@ -27,65 +27,55 @@
   </header>
   <main class="wrap prose">
     <h1>Security Policy</h1>
-    <p class="meta"><strong>Last updated:</strong> 4 September 2026</p>
+    <p class="meta"><strong>Last updated:</strong> 24 September 2026</p>
     <p>
-      This Security Policy describes how <strong>AD Lab Development</strong> secures the
-      Atlassian Forge app <strong>Ticket Quality Auditor</strong> (the “App”).
+      This Security Policy describes how <strong>AD Lab Development</strong> secures Atlassian Forge
+      apps we publish on Marketplace (including
+      <a href="riskpilot-docs.html">RiskPilot</a> and
+      <a href="ticket-quality-docs.html">Ticket Quality Auditor</a>).
     </p>
 
-    <h2>1. Platform</h2>
-    <p>
-      The App runs entirely on <strong>Atlassian Forge</strong>. Core product logic,
-      storage, and optional AI inference use Atlassian-hosted services (Forge functions,
-      Forge app storage / KVS, and Forge LLMs). The App is designed for
-      <strong>Runs on Atlassian</strong> eligibility: no third-party AI egress and no
-      Remotes/Connect backends for core functionality.
-    </p>
+    <div class="app-jump card" style="padding:1rem;margin:1.5rem 0;">
+      <label for="app-sec-jump"><strong>Jump to app scopes</strong></label>
+      <select id="app-sec-jump" class="app-select" style="margin-top:0.5rem;width:100%;max-width:24rem;padding:0.5rem;">
+        <option value="">— Select app —</option>
+        <option value="#riskpilot">RiskPilot</option>
+        <option value="#ticket-quality">Ticket Quality Auditor</option>
+      </select>
+    </div>
 
-    <h2>2. Authentication and authorization</h2>
+    <h2>1. Platform (all Apps)</h2>
     <ul>
-      <li>Access is granted through the customer’s Atlassian Cloud install of the App</li>
-      <li>API calls use Forge’s installation identity (<code>asApp</code>)</li>
-      <li>User-initiated actions call the Forge Authorize API before <code>asApp()</code> Jira access</li>
-      <li>Configuration is managed from the App’s admin UI by Jira administrators</li>
-      <li>Customers are never asked for Atlassian passwords or shared API secrets</li>
+      <li>Apps run on <strong>Atlassian Forge</strong> (functions, Forge app storage / KVS, optional Forge LLMs)</li>
+      <li>Designed for <strong>Runs on Atlassian</strong> eligibility: no third-party AI egress and no Remotes/Connect backends for core functionality</li>
+      <li>User-initiated actions use the Forge <strong>Authorize API</strong> before <code>asApp()</code> Jira access where applicable</li>
+      <li>Customers are not asked for Atlassian passwords or shared API secrets</li>
+      <li>Structured operational logs with secret redaction; logs remain in Forge logging</li>
+      <li>No remote REST APIs exposed by our Apps for third-party integration</li>
     </ul>
 
-    <h2>3. Permissions (scopes)</h2>
+    <h2 id="riskpilot">2. RiskPilot — permissions</h2>
+    <ul>
+      <li><code>read:jira-work</code> — read issues and links for analysis</li>
+      <li><code>write:jira-work</code> — optional audit comments when enabled in admin (user must have edit permission)</li>
+      <li><code>storage:app</code> — configuration, analysis snapshots, outcomes, register</li>
+    </ul>
+
+    <h2 id="ticket-quality">3. Ticket Quality Auditor — permissions</h2>
     <ul>
       <li><code>read:jira-work</code> — read issue content and receive issue events</li>
-      <li><code>write:jira-work</code> — apply confirmed ticket improvements</li>
-      <li><code>storage:app</code> — persist configuration and analysis results</li>
+      <li><code>write:jira-work</code> — apply confirmed Improve Ticket updates only</li>
+      <li><code>storage:app</code> — configuration and analysis results</li>
     </ul>
 
-    <h2>4. Data handling</h2>
-    <ul>
-      <li>Analysis and configuration are stored in Forge app storage (installation-scoped)</li>
-      <li>When AI is enabled, selected ticket text is processed by Atlassian-hosted Forge LLMs</li>
-      <li>When AI is disabled, analysis is deterministic only</li>
-      <li>No separate customer database outside Atlassian for core App state</li>
-    </ul>
-
-    <h2>5. Logging</h2>
-    <p>
-      The App emits structured operational logs with secret redaction. Logs remain within
-      Atlassian Forge logging. We do not share logs containing End-User Data with third parties.
-    </p>
-
-    <h2>6. Network egress</h2>
-    <p>
-      The App does not define customer-managed egress for core functionality and does not
-      expose remote REST APIs for third-party integration. There is no third-party AI egress.
-    </p>
-
-    <h2>7. Vulnerability reporting</h2>
+    <h2>4. Vulnerability reporting</h2>
     <p>
       Report suspected security issues to
       <a href="mailto:security@adlabdevelopment.com">security@adlabdevelopment.com</a>.
-      Include enough detail to reproduce the issue. Avoid sending production secrets in clear text.
+      Include reproduction steps. Avoid sending production secrets in clear text.
     </p>
 
-    <h2>8. Related documents</h2>
+    <h2>5. Related documents</h2>
     <ul>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Service</a></li>
@@ -98,5 +88,11 @@
       <span><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></span>
     </div>
   </footer>
+  <script src="site.js"></script>
+  <script>
+    document.getElementById('app-sec-jump')?.addEventListener('change', function () {
+      if (this.value) location.hash = this.value.replace('#', '');
+    });
+  </script>
 </body>
 </html>

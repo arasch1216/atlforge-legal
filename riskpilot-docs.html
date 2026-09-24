@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Documentation for RiskPilot — delivery risk intelligence for Jira Cloud by AD Lab Development." />
+  <title>Documentation — RiskPilot</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap-wide inner">
+      <a class="logo" href="index.html">
+        <strong>AD Lab Development</strong>
+        <span>Atlassian Forge apps</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="docs.html">Documentation</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="security.html">Security</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap prose">
+    <p class="meta"><a href="docs.html">← All product documentation</a></p>
+    <h1>RiskPilot</h1>
+    <p class="meta"><strong>Version:</strong> 1.0.0 · Jira Cloud · Atlassian Forge</p>
+
+    <h2>What it does</h2>
+    <p>
+      RiskPilot scores delivery risk at issue, project, and portfolio levels. It surfaces signals,
+      recommendations, release exposure, and emerging trends in a dashboard gadget and issue panel.
+      Optional AI explanations use Atlassian-hosted Forge LLMs only (Runs on Atlassian).
+    </p>
+
+    <h2>Install</h2>
+    <ol>
+      <li>Install from Atlassian Marketplace (Jira Cloud, Paid via Atlassian).</li>
+      <li>Grant permissions: <code>read:jira-work</code>, <code>write:jira-work</code> (optional comments), <code>storage:app</code>.</li>
+      <li>Open <strong>RiskPilot Admin</strong> to select monitored projects and thresholds.</li>
+      <li>Add the <strong>RiskPilot</strong> dashboard gadget and refresh portfolio analysis.</li>
+    </ol>
+
+    <h2>Dashboard</h2>
+    <ul>
+      <li><strong>Overview</strong> — portfolio score, exposure mix, delivery profile, drivers, outcomes</li>
+      <li><strong>Risks</strong> — register with Monitor / Mitigate / Resolve</li>
+      <li><strong>What-if</strong> — scenario simulator</li>
+      <li><strong>Insights</strong> — Forge LLM assistant (portfolio, dependencies, focus areas)</li>
+    </ul>
+
+    <h2>Issue panel</h2>
+    <ul>
+      <li>Unified risk profile chart and recommendations</li>
+      <li>Accept recommendations and re-analyze to measure outcomes</li>
+    </ul>
+
+    <h2>Admin</h2>
+    <ul>
+      <li>Projects, analysis schedules, risk thresholds, dimension weights</li>
+      <li>AI and assistant toggles; optional Jira audit comments</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><code>read:jira-work</code> — read issues and links for analysis</li>
+      <li><code>write:jira-work</code> — optional comments when enabled in admin</li>
+      <li><code>storage:app</code> — Forge storage for config and analysis results</li>
+    </ul>
+
+    <h2>Privacy &amp; AI</h2>
+    <p>
+      Results are stored in Forge app storage for your site. When AI is enabled, structured context
+      is sent to Forge LLMs on Atlassian infrastructure. See the
+      <a href="privacy.html#riskpilot">Privacy Policy</a>.
+    </p>
+
+    <h2>Support</h2>
+    <p>
+      <a href="support.html">Support page</a> ·
+      <a href="mailto:support@adlabdevelopment.com">support@adlabdevelopment.com</a>
+    </p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap-wide footer-bottom">
+      <span>© 2026 AD Lab Development</span>
+      <span><a href="mailto:support@adlabdevelopment.com">support@adlabdevelopment.com</a></span>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

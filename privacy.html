@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Privacy policy for Ticket Quality Auditor by AD Lab Development." />
-  <title>Privacy Policy — Ticket Quality Auditor</title>
+  <meta name="description" content="Privacy policy for AD Lab Development Atlassian Forge Marketplace apps." />
+  <title>Privacy Policy — AD Lab Development</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,7 +13,7 @@
     <div class="wrap-wide inner">
       <a class="logo" href="index.html">
         <strong>AD Lab Development</strong>
-        <span>Ticket Quality Auditor</span>
+        <span>Atlassian Forge apps</span>
       </a>
       <nav>
         <a href="index.html">Home</a>
@@ -27,78 +27,67 @@
   </header>
   <main class="wrap prose">
     <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last updated:</strong> 4 September 2026</p>
+    <p class="meta"><strong>Last updated:</strong> 24 September 2026</p>
     <p>
-      This Privacy Policy describes how <strong>AD Lab Development</strong> (“we”, “us”)
-      handles information in connection with the Atlassian Forge app
-      <strong>Ticket Quality Auditor</strong> (the “App”).
+      This Privacy Policy describes how <strong>AD Lab Development</strong> (“we”, “us”) handles
+      information in connection with our Atlassian Forge apps distributed on Atlassian Marketplace
+      (each an “App”).
     </p>
+
+    <div class="app-jump card" style="padding:1rem;margin:1.5rem 0;">
+      <label for="app-privacy-jump"><strong>Jump to app-specific section</strong></label>
+      <select id="app-privacy-jump" class="app-select" style="margin-top:0.5rem;width:100%;max-width:24rem;padding:0.5rem;">
+        <option value="">— Select app —</option>
+        <option value="#riskpilot">RiskPilot</option>
+        <option value="#ticket-quality">Ticket Quality Auditor</option>
+      </select>
+    </div>
 
     <h2>1. Who this applies to</h2>
     <p>
-      This policy applies to organizations that install the App on Atlassian Cloud (Jira)
-      and to users of those installations.
+      Organizations that install our Apps on Atlassian Cloud (Jira) and users of those installations.
+      Product documentation: <a href="docs.html">Documentation hub</a>.
     </p>
 
-    <h2>2. Data we access</h2>
-    <p>Through Atlassian Forge APIs, the App may access:</p>
+    <h2>2. Our Marketplace apps</h2>
     <ul>
-      <li>Jira issue fields used for quality analysis (summary, description, issue type, priority, labels, components, linked issues, project, timestamps)</li>
-      <li>App configuration set by administrators</li>
-      <li>Derived analysis results (scores, findings, recommendations)</li>
-    </ul>
-    <p>We access this data only to provide App functionality inside the customer’s Atlassian site.</p>
-
-    <h2>3. Data we store</h2>
-    <p>
-      The App stores configuration and derived analysis results in
-      <strong>Atlassian Forge app storage (KVS)</strong>, scoped to the customer’s installation.
-      We do not operate a separate customer database outside Atlassian for core App state.
-    </p>
-
-    <h2>4. Artificial intelligence processing</h2>
-    <p>
-      When AI features are enabled, selected ticket text may be processed by
-      <strong>Atlassian-hosted Forge LLMs</strong> to produce structured quality assessments
-      and optional rewrite suggestions. This processing remains within the Atlassian trust boundary.
-    </p>
-    <p>
-      When AI is disabled, analysis is deterministic (rules/scoring only) and no LLM calls are made.
-    </p>
-
-    <h2>5. What we do not do</h2>
-    <ul>
-      <li>We do not sell customer Jira content</li>
-      <li>We do not use customer ticket content to train public third-party models</li>
-      <li>We do not collect payment card details (Marketplace billing is handled by Atlassian when the App is paid)</li>
+      <li><a href="riskpilot-docs.html">RiskPilot</a> — delivery risk intelligence</li>
+      <li><a href="ticket-quality-docs.html">Ticket Quality Auditor</a> — issue quality scoring</li>
     </ul>
 
-    <h2>6. Retention</h2>
-    <p>
-      Stored analysis is retained until overwritten by a newer analysis, invalidated by
-      configuration logic, or removed as part of app uninstall / Atlassian platform retention.
-    </p>
-
-    <h2>7. Deletion / uninstall</h2>
-    <p>
-      Uninstalling the App removes the App’s access to the site. For deletion requests,
-      contact us using the email below.
-    </p>
-
-    <h2>8. Subprocessors / platform providers</h2>
-    <p>
-      The App runs on Atlassian Forge. AI features use Atlassian Forge LLMs.
-      Atlassian’s platform terms and privacy documentation also apply.
-    </p>
-
-    <h2>9. Customer responsibilities</h2>
+    <h2>3. Common practices (all Apps)</h2>
     <ul>
-      <li>Configure the App appropriately for your organization</li>
-      <li>Ensure your use of Jira content complies with your internal policies and applicable law</li>
-      <li>Provide notices to your users as required for your jurisdiction</li>
+      <li>We access Jira data only through Atlassian Forge APIs to provide App functionality on your site</li>
+      <li>Configuration and derived analysis are stored in <strong>Atlassian Forge app storage (KVS)</strong>, scoped to your installation</li>
+      <li>We do not operate a separate customer database outside Atlassian for core App state</li>
+      <li>When AI features are enabled for an App, selected structured or text context may be processed by <strong>Atlassian-hosted Forge LLMs</strong> (no third-party AI egress for shipped Apps)</li>
+      <li>When AI is disabled, Apps use deterministic logic only (no LLM calls)</li>
+      <li>We do not sell customer Jira content or use it to train public third-party models</li>
+      <li>Marketplace billing is handled by Atlassian when an App is paid; we do not collect payment card data</li>
     </ul>
 
-    <h2>10. Contact</h2>
+    <h2 id="riskpilot">4. RiskPilot — data access</h2>
+    <p>Through Forge APIs, RiskPilot may access issue fields and links used for risk analysis (summary, status, priority, dates, issue links, fix versions, project metadata, timestamps) and store derived risk scores, signals, recommendations, portfolio views, register statuses, and outcome records.</p>
+    <p>Optional Jira comments may be posted when your administrator enables audit comments and you have issue edit permission.</p>
+    <p>Details: <a href="riskpilot-docs.html">RiskPilot documentation</a> · <a href="privacy.html?app=riskpilot">Link with anchor</a></p>
+
+    <h2 id="ticket-quality">5. Ticket Quality Auditor — data access</h2>
+    <p>Through Forge APIs, the App may access issue fields used for quality analysis (summary, description, issue type, priority, labels, components, linked issues, project, timestamps) and store derived scores, findings, and recommendations.</p>
+    <p>Issue updates occur only after explicit user confirmation (Improve Ticket).</p>
+    <p>Details: <a href="ticket-quality-docs.html">Ticket Quality documentation</a></p>
+
+    <h2>6. Retention and uninstall</h2>
+    <p>
+      Stored data is retained until overwritten, invalidated by App logic, or removed when the App
+      is uninstalled or per Atlassian platform retention. Contact us for deletion questions.
+    </p>
+
+    <h2>7. Platform providers</h2>
+    <p>
+      Apps run on Atlassian Forge. Atlassian’s platform terms and privacy documentation also apply.
+    </p>
+
+    <h2>8. Contact</h2>
     <p>
       <a href="mailto:support@adlabdevelopment.com">support@adlabdevelopment.com</a><br />
       AD Lab Development
@@ -110,5 +99,11 @@
       <span><a href="terms.html">Terms</a> · <a href="security.html">Security</a></span>
     </div>
   </footer>
+  <script src="site.js"></script>
+  <script>
+    document.getElementById('app-privacy-jump')?.addEventListener('change', function () {
+      if (this.value) location.hash = this.value.replace('#', '');
+    });
+  </script>
 </body>
 </html>
